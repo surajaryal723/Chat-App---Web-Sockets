@@ -1,34 +1,12 @@
 import { useEffect, useRef, useState } from "react"
 
 
-function App() {
+function App() 
+{
 
-const [socket,setSocket]=useState()
-const formRef=useRef()
-
-function sendMessage(){
-if(!socket){
-  return
-}
-socket.send(formRef.current.value)
-}
-
-useEffect(()=>{
-const wss = new WebSocket('ws://localhost:8080')
-setSocket(wss)
-wss.onmessage=(message)=>{
-alert(message.data)
-}
-},[])
-
-  return (
-    <>
-      <form action="">
-        <input type="text" ref={formRef} />
-        <button onClick={sendMessage}>Send Message</button>
-      </form>
-    </>
-  )
+  return <>
+  <h1>Hello there</h1>
+  </>
 }
 
 export default App
