@@ -31,4 +31,8 @@ wss.on("connection", (socket) => {
             }
         }
     });
+    socket.on('close', (socket) => {
+        // @ts-ignore
+        sockets = sockets.filter(s => s.socket !== socket);
+    });
 });
